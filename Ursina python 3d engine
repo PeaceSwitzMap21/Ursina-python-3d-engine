@@ -1,0 +1,28 @@
+from ursina import *
+app = Ursina()
+
+cube = Entity(model='cube', color=color.azure,
+ texture='white_cube')
+
+
+def update():
+      cube.x += held_keys["x"]*0.1
+      cube.x -= held_keys["c"]*0.1
+      cube.y += held_keys["z"] * 0.1
+      cube.y -= held_keys["v"] * 0.1
+
+      cube.scale_x += held_keys["f"] * 0.1
+      cube.scale_x -= held_keys["g"] * 0.1
+      cube.scale_y += held_keys["h"] * 0.1
+      cube.scale_y -= held_keys["k"] * 0.1
+
+      cube.rotation_x += held_keys["b"] * 0.1
+      cube.rotation_x -= held_keys["n"] * 0.1
+      cube.rotation_y += held_keys["d"] * 0.1
+      cube.rotation_y -= held_keys["m"] * 0.1
+
+
+EditorCamera()
+
+
+app.run()
